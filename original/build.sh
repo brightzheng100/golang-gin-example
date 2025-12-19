@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mkdir bin
-
 echo "Building server..."
 env GOOS=darwin GOARCH=arm64 go build -o bin/gin-server-darwin-arm64
 env GOOS=linux GOARCH=arm64 go build -o bin/gin-server-linux-arm64

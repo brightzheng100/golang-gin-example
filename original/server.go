@@ -25,26 +25,26 @@ func main() {
 
 	engine := gin.Default()
 
-	engine.GET("/ping", func(c *gin.Context) {
+	engine.GET("/bing", func(c *gin.Context) {
 		log.WithFields(log.Fields{
-			"endpoint": "/ping",
-		}).Info("/ping endpoint called")
+			"endpoint": "/bing",
+		}).Info("/bing endpoint called")
 
 		c.JSON(200, gin.H{
-			"message": "pong",
+			"message": "Bang!",
 		})
 	})
 
 	// use group: v1
 	v1 := engine.Group("/v1")
 
-	v1.GET("/ping", func(c *gin.Context) {
+	v1.GET("/bing", func(c *gin.Context) {
 		log.WithFields(log.Fields{
-			"endpoint": "/v1/ping",
-		}).Info("/v1/ping endpoint called")
+			"endpoint": "/v1/bing",
+		}).Info("/v1/bing endpoint called")
 
 		c.JSON(200, gin.H{
-			"message": "pong",
+			"message": "Bang!",
 		})
 	})
 

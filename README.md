@@ -55,8 +55,8 @@ You will see outputs like:
 
 ```log
 ...
-[GIN-debug] GET    /ping                     --> main.main.func1 (3 handlers)
-[GIN-debug] GET    /v1/ping                  --> main.main.func2 (3 handlers)
+[GIN-debug] GET    /bing                     --> main.main.func1 (3 handlers)
+[GIN-debug] GET    /v1/bing                  --> main.main.func2 (3 handlers)
 [GIN-debug] GET    /v1/error                 --> main.main.func3 (3 handlers)
 ...
 [GIN-debug] Listening and serving HTTP on :8080
@@ -103,8 +103,8 @@ You will see outputs like:
 
 ```log
 ...
-[GIN-debug] GET    /ping                     --> main.main.func1 (3 handlers)
-[GIN-debug] GET    /v1/ping                  --> main.main.func2 (3 handlers)
+[GIN-debug] GET    /bing                     --> main.main.func1 (3 handlers)
+[GIN-debug] GET    /v1/bing                  --> main.main.func2 (3 handlers)
 [GIN-debug] GET    /v1/error                 --> main.main.func3 (3 handlers)
 ...
 [GIN-debug] Listening and serving HTTP on :8080
@@ -145,6 +145,10 @@ Both Client and Server are automatically discovered properly:
 
 ### Tracing
 
+Well, about 33% error rate, which is by design, has been properly captured:
+
+![tracing-analysis](./docs/tracing-analysis.png)
+
 Tracing without error:
 
 ![tracing-normal](./docs/tracing-normal.png)
@@ -154,7 +158,6 @@ Tracing with error(s):
 - The ERROR level logs are properly ingested to further enhance the tracing context.
 
 ![tracing-with-errors](./docs/tracing-with-errors.png)
-
 
 ### Agent Logs
 

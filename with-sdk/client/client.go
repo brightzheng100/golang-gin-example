@@ -41,7 +41,7 @@ func main() {
 		os.Exit(2)
 	}
 
-	var endpoints = []string{"/ping", "/v1/ping", "/v1/error"}
+	var endpoints = []string{"/bing", "/v1/bing", "/v1/error"}
 
 	client := &http.Client{
 		Transport: instana.RoundTripper(collector, nil),
